@@ -5,7 +5,7 @@ public class Words {
     private HashSet<String> words;
 
     public Words() throws IOException {
-        String path = "C:\\Users\\liumi\\IdeaProjects\\Word-Hunt\\data\\usa2.txt";
+        String path = "C:\\Users\\liumi\\IdeaProjects\\WordHunt\\data\\usa2.txt";
         BufferedReader scan = new BufferedReader(new FileReader(path));
         words = new HashSet<>();
 
