@@ -23,8 +23,8 @@ public class Solver {
                     @Override
                     public int compare(String o1, String o2) {
                         if (o1.equals(o2)) return 0;
-                        if (o1.length() > o2.length()) return -1;
-                        return 1;
+                        if (o1.length() > o2.length()) return 1;
+                        return -1;
                     }
                 }
         );
@@ -60,7 +60,7 @@ public class Solver {
                     ArrayList<Integer> newPath = new ArrayList<>(pathCopy);
                     newPath.add(4 * newI + newJ);
 
-                    if (newPath.size() < 7) {
+                    if (newPath.size() < 8) {
                         phrases.add(newPhrase);
                         paths.add(newPath);
                     }

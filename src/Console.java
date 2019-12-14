@@ -1,5 +1,7 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Console {
@@ -9,6 +11,8 @@ public class Console {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         Solver solver = new Solver(input);
-        System.out.println(solver.solve());
+        for (Map.Entry<String, ArrayList<Integer>> entry : solver.solve().entrySet()) {
+            System.out.println(entry);
+        }
     }
 }
