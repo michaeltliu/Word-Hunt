@@ -1,18 +1,18 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Console {
     public static void main(String[] args) throws IOException {
-        System.out.println("Enter the letters one after another. " +
+        System.out.println("Enter 16 letters one after another. " +
                 "From left to right across rows, then from top to bottom down columns.");
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         Solver solver = new Solver(input);
-        for (Map.Entry<String, ArrayList<Integer>> entry : solver.solve().entrySet()) {
+        TreeMap<String, ArrayList<Integer>> map = solver.solve();
+        Set<Map.Entry<String, ArrayList<Integer>>> entrySet = map.entrySet();
+        for (Map.Entry<String, ArrayList<Integer>> entry : entrySet) {
             System.out.println(entry);
         }
+        // Visualizer visualizer = new Visualizer(map);
     }
 }
