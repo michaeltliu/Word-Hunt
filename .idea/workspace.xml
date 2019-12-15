@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fade44f-14e6-4461-b121-b2a1c48978e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Visualizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WordHunt/Console.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WordHunt/Console.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WordHunt/Visualizer$Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WordHunt/Visualizer$Panel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WordHunt/Visualizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WordHunt/Visualizer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visualizer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

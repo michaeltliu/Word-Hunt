@@ -13,6 +13,6 @@ public class Console {
         for (Map.Entry<String, ArrayList<Integer>> entry : entrySet) {
             System.out.println(entry);
         }
-        // Visualizer visualizer = new Visualizer(map);
+        Visualizer visualizer = new Visualizer(map, input);
     }
 }
