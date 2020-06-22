@@ -9,8 +9,7 @@ public class Console {
         String input = scan.nextLine();
         Solver solver = new Solver(input);
         TreeMap<String, ArrayList<Integer>> map = solver.solve();
-        Set<Map.Entry<String, ArrayList<Integer>>> entrySet = map.entrySet();
-        for (Map.Entry<String, ArrayList<Integer>> entry : entrySet) {
+        for (Map.Entry<String, ArrayList<Integer>> entry : map.entrySet()) {
             System.out.println(entry);
         }
         Visualizer visualizer = new Visualizer(map, input);

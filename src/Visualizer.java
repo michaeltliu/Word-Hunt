@@ -11,6 +11,7 @@ public class Visualizer implements KeyListener {
             super.paint(g);
             paintGrid(g);
             paintCurrentPath(g);
+            paintCurrentWord(g);
         }
 
         private void paintGrid(Graphics g) {
@@ -37,9 +38,15 @@ public class Visualizer implements KeyListener {
                         100 + nextJ * 100, 100 + nextI * 100);
             }
         }
+
+        private void paintCurrentWord(Graphics g) {
+            g.setFont(new Font("TimesRoman", Font.PLAIN, 24));
+            g.drawString(words.get(whichPath), 225, 30);
+        }
     }
 
     private ArrayList<ArrayList<Integer>> paths;
+    private ArrayList<String> words;
     private String input;
     private JFrame frame;
     private Panel panel;
@@ -47,6 +54,7 @@ public class Visualizer implements KeyListener {
 
     public Visualizer(TreeMap<String, ArrayList<Integer>> paths, String input) {
         this.paths = new ArrayList<>(paths.values());
+        this.words = new ArrayList<>(paths.keySet());
         this.input = input;
 
         frame = new JFrame("Word Hunt Solver");
@@ -68,10 +76,12 @@ public class Visualizer implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+        if (e.getKeyCode() == KeyEvent.VK_SPACE && whichPath > 0)
             whichPath --;
-            panel.repaint();
-        }
+        else if (e.getKeyCode() == KeyEvent.VK_B &&
+                whichPath < paths.size() - 1)
+            whichPath ++;
+        panel.repaint();
     }
 
     @Override

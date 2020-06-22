@@ -19,14 +19,7 @@ public class Solver {
         // contains all confirmed words
         // sorts entries by length of the word
         TreeMap<String, ArrayList<Integer>> words = new TreeMap<>(
-                new Comparator<String>() {
-                    @Override
-                    public int compare(String o1, String o2) {
-                        if (o1.equals(o2)) return 0;
-                        if (o1.length() > o2.length()) return 1;
-                        return -1;
-                    }
-                }
+                Comparator.comparing(String::length).thenComparing(String::compareTo)
         );
         // contains phrases in the process of being built
         Queue<String> phrases = new LinkedList<>();
@@ -41,10 +34,10 @@ public class Solver {
             paths.add(p);
         }
 
-        // check up to 7 layers deep
+        // check up to 8 layers deep
         while (!paths.isEmpty()) {
-            ArrayList<Integer> pathCopy = new ArrayList<>(paths.remove());
-            String phrase = phrases.remove();
+            ArrayList<Integer> pathCopy = new ArrayList<>(paths.poll());
+            String phrase = phrases.poll();
 
             if (myWords.isWord(phrase) && phrase.length() > 1) words.put(phrase, pathCopy);
 
@@ -60,7 +53,7 @@ public class Solver {
                     ArrayList<Integer> newPath = new ArrayList<>(pathCopy);
                     newPath.add(4 * newI + newJ);
 
-                    if (newPath.size() < 8) {
+                    if (newPath.size() < 9) {
                         phrases.add(newPhrase);
                         paths.add(newPath);
                     }
